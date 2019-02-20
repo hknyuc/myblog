@@ -9,5 +9,4 @@ end
 gem 'html-proofer'
 gem 'tzinfo'
 gem 'tzinfo-data'
-gem 'redirect-from'
 gem 'jekyll-redirect-from'
