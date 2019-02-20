@@ -1,5 +1,5 @@
 Gem::Specification.new do |spec|
-	spec.name          = "Hakan Yücel"
+	spec.name          = "hknyuc"
 	spec.version       = "2.5.0"
 	spec.authors       = ["Hakan Yücel"]
 	spec.email         = ["hknyucell@gmail.com"]
