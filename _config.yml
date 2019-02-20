@@ -1,15 +1,14 @@
-#Site settings
+# Site settings
 title_left    : "Think"
 title_right   : "space" # default: ""
-description   : "Hakan Yücel'e ait teknik blog yazıları"
-keywords      : "c#, javascript"
+description   : "Minimalist Jekyll theme for technical writing blog."
+keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
 url           : https://heiswayi.github.io/thinkspace # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-XXXXX-XX
-twitter_username  : "hknyuc"
-github_username   :  "hknyuc"
+twitter_username  : ""
 comments_enabled  : false # if enabled (set to true), please provide your disqus_username
 disqus_shortname  : ""
 postshare_enabled : false
@@ -29,13 +28,12 @@ sass:
 
 # Author settings
 author:
-  name     : "Hakan Yücel"
+  name     : "John Doe"
 
 plugins:
   - jekyll-sitemap
   - bourbon
   - jekyll-paginate
-  - jekyll-redirect-from
 
 # navbar pages
 navbar:
