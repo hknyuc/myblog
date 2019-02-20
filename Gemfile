@@ -4,8 +4,10 @@ group :jekyll_plugins do
     gem "jekyll-sitemap"
     gem "bourbon"
     gem "jekyll-paginate"
+    gem "jekyll-redirect-from"
 end
 gem 'html-proofer'
 gem 'tzinfo'
 gem 'tzinfo-data'
 gem 'redirect-from'
+gem 'jekyll-redirect-from'
