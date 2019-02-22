@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JavaScript ve Aspect Oriented Programming"
+title: "Full Stack Developer"
 comments: true
 description: "Full Stack Develıper"
 keywords: "developer full stack junior"
