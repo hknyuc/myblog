@@ -1,3 +1,10 @@
+---
+layout: post
+title: "JavaScript ve Aspect Oriented Programming"
+comments: true
+description: "Full Stack Develıper"
+keywords: "developer full stack junior"
+---
 # Full-Stack Developer
 
 Yazılım dünyasında isimlendirmenin çok özel bir yeri vardır. Yazdığımız değişkeni, metodu, sınıfı, kütüphaneyi, teknolojiyi, eko sistemi, teknikleri, ünvanları isimlendiriyoruz. Yazılım dünyası o kadar hızlı değişiyor, farklılaşıyor ki buna ayak uydurmak gerçekten zor. Değişim bu kadar hızlı olunca da bazı kavramların içi tam olarak doldurulamıyor. Bazı kavramlar kurumlardan kuruma, kullanıldıkları yerlerde farklılık gösterebiliyor. 
