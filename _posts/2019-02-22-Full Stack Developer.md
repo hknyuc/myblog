@@ -8,8 +8,7 @@ keywords: "developer full stack junior"
 
 Yazılım dünyasında isimlendirmenin çok özel bir yeri vardır. Yazdığımız değişkeni, metodu, sınıfı, kütüphaneyi, teknolojiyi, eko sistemi, teknikleri, ünvanları isimlendiriyoruz. Yazılım dünyası o kadar hızlı değişiyor, farklılaşıyor ki buna ayak uydurmak gerçekten zor. Değişim bu kadar hızlı olunca da bazı kavramların içi tam olarak doldurulamıyor. Bazı kavramlar kurumlardan kuruma, kullanıldıkları yerlerde farklılık gösterebiliyor. 
 
-**Full-Stack Developer** ünvanı da tamda böyle bir kavram. İçi tam olarak doldurulamıyor.  Stackoverflow'ın 2018 verilerine göre dünya üzerindeki yazılımcıların  %48.2 si kendisini Full Stack Developer olarak görmekte ([
-](https://insights.stackoverflow.com/survey/2018/#developer-profile)).  Şuan yazılım dünyasında en yaygın ünvan desek yanılmış olmayız. Peki bu ünvandan tam olarak ne anlamamız gerekiyor? 
+**Full-Stack Developer** ünvanı da tamda böyle bir kavram. İçi tam olarak doldurulamıyor.  Stackoverflow'ın 2018 verilerine göre dünya üzerindeki yazılımcıların  %48.2 si kendisini Full Stack Developer olarak görmekte ([link](https://insights.stackoverflow.com/survey/2018/#developer-profile)).  Şuan yazılım dünyasında en yaygın ünvan desek yanılmış olmayız. Peki bu ünvandan tam olarak ne anlamamız gerekiyor? 
 
 Uygulamalar temel olarak 3 parçadan ; istemci, sunucu ve veritabanından oluşuyor. Tabi bu uygulamaların iletişimi, yayınlanması, bakımı, yüklerinin dağıtılması gibi (DevOps) işlemleri de yazılım geliştirme süreçlerinin bir parçası olarak duruyor. Bu saydığım alanların hepsi aslında birer uzmanlık alanı. **Full stack developer** bütün bu süreçlerin hepsinde aktif rol alan kişi oluyor. 
 
