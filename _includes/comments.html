@@ -10,16 +10,9 @@
         this.page.url = '{{ page.url | prepend: site.baseurl | prepend: site.baseurl }}'; 
         this.page.identifier = '{{ page.url | prepend: site.baseurl | prepend: site.baseurl }}'; 
       }
-      
-        var disqus_shortname = '{{ site.disqus_shortname }}';
-        var disqus_identifier = '{{ site.disqus_shortname }}';
-        var disqus_title = '{{ page.title }}';
-        var disqus_url = '{{ page.url | prepend: site.baseurl | prepend: site.baseurl }}';
-        
-
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; 
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            dsq.src = '//' + '{{ site.disqus_shortname }}' + '.disqus.com/embed.js';
             dsq.src = 'https://yucel-dev.disqus.com/embed.js';
             dsq.setAttribute('data-timestamp', +new Date());
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
