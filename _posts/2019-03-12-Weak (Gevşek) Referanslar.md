@@ -119,5 +119,5 @@ New instance alınmadan cağrılan Foo class'ınını kullanıma kapattık. Eğe
 
 Bu yazımda aşağıdaki sayfalardan da yararlandım;
 1. [Using the WeakSet object](https://developer.mozilla.org/tr/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
-2. [Using the WeakMap Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+2. [Using the WeakMap object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
 3. [Domenic Denicola's Weak Code](https://esdiscuss.org/topic/actual-weakset-use-cases#content-1)
