@@ -7,6 +7,7 @@
 
       <script type="text/javascript">
       var disqus_config = function () {
+        this.page = this.page || {};
         this.page.url = '{{ page.url | prepend: site.baseurl | prepend: site.baseurl }}'; 
         this.page.identifier = '{{ page.url | prepend: site.baseurl | prepend: site.baseurl }}'; 
       }
