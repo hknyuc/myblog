@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Weak Referanslar"
+title: "Weak (Gevşek) Referanslar"
 comments: true
 description: ""
 keywords: "Weakset Weakmap map set"
@@ -66,7 +66,7 @@ weakMap.has(o1) // false;
 
 WeakMap sınıfı iterasyonu desteklememektedir.
 
-```JS
+```js
 for(let i of weakMap)
     console.log(i);
 // TypeError: weakMap is not iterable
