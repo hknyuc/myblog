@@ -13,13 +13,15 @@
 var disqus_config = function () {
  
 /*this.page.url = '{{ page.url | prepend: site.baseurl}}';*/ 
-this.page.url = '{{page.url | prepend: site.app}};'
+this.page.url = '{{page.url | prepend: site.app}}';
 this.page.identifier = '{{ page.id }}';
 };
 
+var disqus_shortname = '{{site.github_username}}';
+
 (function() { 
 var d = document, s = d.createElement('script');
-s.src = 'https://yucel-dev.disqus.com/embed.js';
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
