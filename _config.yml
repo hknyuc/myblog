@@ -1,7 +1,7 @@
 # Site settings
 title_left    : "Hakan"
 title_right   : " Yücel" # default: ""
-description   : "Yazılım teknolojileri ve teknikleri üzerine analiz ve çalışmalarım;"
+description   : "Yazılım teknolojileri ve teknikleri üzerine analiz, çalışma ve projelerim"
 keywords      : "c#, javascript, mongodb, pattern, aop, oop"
 url           :  "https://yucel.dev"
 app           :  "https://yucel.dev"
