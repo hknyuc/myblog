@@ -94,7 +94,7 @@ paper = null;
 weakSet.has(paper); // false;
 ```
 
-**WeakMap**'de olduğu gibi **WeakSet** de iterasyonu desteklememektedir. Peki iterasyon olmayan bir set implementasyonu ne işimize yarayabilir? Kullanım alanı tabiki normal Set collection'a göre az olmasına rağmen önemli kullanım alanları var. Bir tane örnek vermek gerekirse;
+**WeakMap**'de olduğu gibi **WeakSet** de iterasyonu desteklememektedir. Peki iterasyon olmayan bir set implementasyonu ne işimize yarayabilir? Kullanım alanı tabiki normal Set collection'a göre az olmasına rağmen yine de önemli kullanım alanları mevcut. Bir tane örnek vermek gerekirse;
 
 ```js
 // original code at :https://esdiscuss.org/topic/actual-weakset-use-cases#content-1
