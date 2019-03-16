@@ -46,8 +46,8 @@ __'Invalid value used as weak map key'__ hatası alıyoruz. Görüldüğü gibi 
 
 ```js
 weakMap.has(o1); // true;
-weakMap.has(o3) // true;
-weakMap.has(o5) // false;
+weakMap.has(o3); // true;
+weakMap.has(o5); // false;
 ```
 
 **has** metodu ile girilen Key'in collection içerisine olup olmadığını kontrol edebiliriz. Dikkat ettiyseniz değeri undefined olarak girilse bile metot sonucu true olarak dönmektedir. İçerisindeki herhangi bir değeri silmek için delete metodunu kullanabilirsiniz.
@@ -94,7 +94,7 @@ paper = null;
 weakSet.has(paper); // false;
 ```
 
-**WeakMap**'de olduğu gibi **WeakSet** de iterasyonu desteklememektedir. Peki iterasyon olmayan bir set implementasyonu ne işimize yarayabilir? Kullanım alanı tabiki normal Set collection'a göre az olmasına rağmen önemli kullanım alanları var. Üzerinde işlem yaptığımız referans tipli değerin yapısını değiştirmeden üzerinde işlem yapılıp yapılmadığını işaretleyebiliriz. Bir tane örnek vermek gerekirse ;
+**WeakMap**'de olduğu gibi **WeakSet** de iterasyonu desteklememektedir. Peki iterasyon olmayan bir set implementasyonu ne işimize yarayabilir? Kullanım alanı tabiki normal Set collection'a göre az olmasına rağmen önemli kullanım alanları var. Bir tane örnek vermek gerekirse;
 
 ```js
 // original code at :https://esdiscuss.org/topic/actual-weakset-use-cases#content-1
