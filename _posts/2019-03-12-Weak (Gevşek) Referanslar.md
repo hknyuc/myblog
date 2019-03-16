@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Weak (Gevşek) Referanslar"
 comments: true
@@ -6,11 +6,11 @@ description: ""
 keywords: "Weakset Weakmap map set"
 ---
 
-Single Page Application (SPA) uygulamaların sayısı gün geçtikçe artıyor. Forentend tarafında kullanılan JS'e ait framework (çatı) ve library (kütüphane) sayısı gün geçtikçe artıyor, çeşitleniyor. SPA uygulamalarının sayısındaki artış bizi bazı konularda daha dikkatlı olmamıza, bazı problemlerin üzerine daha çok gitmemize neden oluyor.  
+Single Page Application (SPA) uygulamaların sayısı gün geçtikçe artıyor. Frontend tarafında kullanılan JS'e ait framework (çatı) ve library (kütüphane) sayısı gün geçtikçe artıyor, çeşitleniyor. SPA uygulamalarının sayısındaki artış, bizi bazı konularda daha dikkatli olmaya ve bazı problemlerin üzerinde daha çok durmaya zorluyor.
 
-SPA uygulamalarının en büyük problemlerinden bir tanesi de bellek sızıntılarıdır (Memory Leaks).  JS kullanılmayan yapıları otomatik silen bir Garbage Collection (GC) mekanizmasına sahiptir. Herhangi bir yapı üzerinde referansı olmayan yapıları GC otomatik silmektedir. Tarayıcıların da bellek yönetimi konusunda bazı teknikleri vardır. Bunlardan bir taneside çalışan sayfanın kapandıktan sonra bellek üzerinde kullandığı alanları silmesidir. SPA uygulamaları ise tek bir sayfa üzerinde çalıştıkları için bellek yönetimi konusunda daha hassas olması gerekmektedir. Herhangi bir component kullanıldıktan sonra kullanılan scope içerisindeki objelerin silinmesi gerekmektedir. JS'a ES6 ile gelen Weak Reference kavramı daha iyi bellek yönetimi konusunda yardımcı olmaktadır.
+SPA uygulamalarının en büyük problemlerinden bir tanesi de bellek sızıntılarıdır (Memory Leaks).  JS kullanılmayan yapıları otomatik silen bir Garbage Collection (GC) mekanizmasına sahiptir. Herhangi bir yapı üzerinde referansı olmayan yapıları GC otomatik olarak silmektedir. Tarayıcıların da bellek yönetimi konusunda bazı teknikleri vardır. Bunlardan bir tanesi de çalışan sayfanın kapandıktan sonra bellek üzerinde kullandığı alanları silmesidir. SPA uygulamaları bir sayfa üzerinde çalıştıkları için bellek yönetimi konusunda daha hassas olmaları gerekir. Herhangi bir component kullanıldıktan sonra kullanılan scope içerisindeki referansların silinmesi gerekmektedir. JS'a ES6 ile gelen Weak Reference kavramı daha iyi bellek yönetimi konusunda yardımcı olmaktadır.
 
-Weak Reference kavramına ilk olarak .Net Framework 4 de karşıma çıkmıştı. Javascript'e ise 2015 yılında ES6 ile geldi. Implementation ve kullanım biçiminde farklılık olsa da aşağı yukarı aynı işi yapmaktadır. JS'de **WeakMap** ve **WeakSet** collection yapıları ile bir referansı gevşetmemiz (weak) mümküm.
+Weak Reference kavramı ilk olarak .Net Framework 4 de karşıma çıkmıştı. Javascript'e ise 2015 yılında ES6 ile geldi. Implementation ve kullanım biçiminde farklılık olsa da aşağı yukarı aynı işi yapmaktadır. JS'de **WeakMap** ve **WeakSet** collection yapıları ile bir referansı gevşetmemiz (weak) mümkün.
 
 ```js
 let weakMap = new WeakMap();
@@ -50,7 +50,7 @@ weakMap.has(o3); // true;
 weakMap.has(o5); // false;
 ```
 
-**has** metodu ile girilen Key'in collection içerisine olup olmadığını kontrol edebiliriz. Dikkat ettiyseniz değeri undefined olarak girilse bile metot sonucu true olarak dönmektedir. İçerisindeki herhangi bir değeri silmek için delete metodunu kullanabilirsiniz.
+**has** metodu ile girilen Key'in collection içerisinde olup olmadığını kontrol edebiliriz. Dikkat ettiyseniz değeri undefined olarak girilse bile metot sonucu true olarak dönmektedir. İçerisindeki herhangi bir değeri silmek için **delete** metodunu kullanabilirsiniz.
 
 ```js
 weakMap.delete(o3);
@@ -113,7 +113,7 @@ class Foo {
 }
 ```
 
-New instance alınmadan cağrılan Foo class'ınını kullanıma kapattık. Eğer bunu normal Set collectini ile yapsaydık, alınan bütün Foo instancelarını globaldaki scope'un içine alarak hafızayı şişirmiş olacaktık.
+New instance alınmadan cağrılan Foo Class'ınını kullanıma kapattık. Eğer bunu normal Set collectini ile yapsaydık, alınan bütün Foo instancelarını globaldaki Scope'un içine alarak hafızayı şişirmiş olacaktık.
 
 ---
 
