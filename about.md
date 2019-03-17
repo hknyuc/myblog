@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Hakkımda
-permalink: /aboutMe/
+permalink: /about/
 ---
 Anadolu Universitesi Elektrik-Elektronik Müh okudum . Dijital sistemler üstüne uzmanlık yaptım. Okulda aldığım teorik bilgileri sahada da pekiştirmek için ünversiteye başladığımdan beri yazılım sektöründe aktif olarak çalışmaktayım. Action script yazarak başlamış olduğum yazılım geliştirme süreçlerime Javascript ve .Net teknolojileri ile devam etmekteyim.
 
