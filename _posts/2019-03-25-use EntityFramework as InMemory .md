@@ -9,10 +9,9 @@ Unit test yazanlar bilir, veritabanı üzerindeki işlemlerde unit test yazmak b
 
 İlk önce bu özelliği kullanabilmek için nuget üzeriden **Microsoft.EntityFrameworkCore.InMemory** kütüphanesini indirmek gerekiyor. Bunun için PM'i açıp
 
-```nuget
+```csharp
  Install-Package Microsoft.EntityFrameworkCore.InMemory
 ```
-
 
 yazarak paketi indirebilirsiniz. Şimdi sıra geldi Entity modellerimizi yazmaya,
 
