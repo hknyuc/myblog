@@ -5,7 +5,7 @@ comments: true
 description: ""
 keywords: "EntityFramework memory inmemory .net .netcore EF"
 ---
-Unit test yazanlar bilir, veritabanı üzerindeki işlemlerde unit test yazmak baya zahmetlidir. Ya bir test veritabanı ayarlamak gerekir, ya da işlemleri hafızadan (memory)'den yapabilmek için Entity'lerin bulunduğu fake DbSet yapıları kurmak gerekiyor. .Net Core ile birlikte geliştiricileri bu zahmetten kurtarmak için EntityFramework (EF)'e InMemory desteği geldi. 
+Unit test yazanlar bilir, veritabanı üzerindeki işlemlerde unit test yazmak baya zahmetlidir. Ya bir test veritabanı ayarlamak gerekir, ya da işlemleri hafızadan (memory)'den yapabilmek için Entity'lerin bulunduğu fake DbSet yapıları kurmak gerekiyor. **.Net Core** ile birlikte geliştiricileri bu zahmetten kurtarmak için EntityFramework (EF)'e InMemory desteği geldi. 
 
 İlk önce bu özelliği kullanabilmek için nuget üzeriden **Microsoft.EntityFrameworkCore.InMemory** kütüphanesini indirmek gerekiyor. Bunun için PM'i açıp
 
