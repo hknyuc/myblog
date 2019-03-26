@@ -7,7 +7,7 @@ keywords: "Weakset Weakmap map set"
 ---
 Unit test yazanlar bilir, veritabanı üzerindeki işlemlerde unit test yazmak baya zahmetlidir. Ya bir test veritabanı ayarlamak gerekir, ya da işlemleri hafızadan (memory)'den yapabilmek için Entity'lerin bulunduğu fake DbSet yapıları kurmak gerekiyor. .Net Core ile birlikte geliştiricileri bu zahmetten kurtarmak için EntityFramework (EF)'e InMemory desteği geldi. 
 
-İlk önce bu özelliği kullanabilmek için nuget üzeriden **Microsoft.EntityFrameworkCore.InMemory** kütüphanesini indirmek gerekiyor. Bunun için PM console'u açıp
+İlk önce bu özelliği kullanabilmek için nuget üzeriden **Microsoft.EntityFrameworkCore.InMemory** kütüphanesini indirmek gerekiyor. Bunun için PM'i açıp
 
 ```nuget
  Install-Package Microsoft.EntityFrameworkCore.InMemory
@@ -51,7 +51,7 @@ yazmış olduğumuz entityler veritabanı için kullandığımız ile aynı. Şi
 
 ```csharp
      var inMemoryOptions = new DbContextOptionsBuilder<TestContext>()
-                .UseInMemoryDatabase(Guid.)
+                .UseInMemoryDatabase(Guid.NewGuid().ToString())
                 .Options;
         using (var dbContext = new TestContext(inMemoryOptions))
             {
@@ -75,4 +75,4 @@ yazmış olduğumuz entityler veritabanı için kullandığımız ile aynı. Şi
                 dbContext.SaveChanges();
             }
 ```
-**DbContextOptionsBuilder** sınıfı üzeriden **UseInMemoryDatabase** metodu parametre olarak veritabanı ismi almakta. üzerinde koştuğumuz program kapanıp memoryden silinmediği mühdetçe aynı veritabanı üzerinden işlemlerimize devam da edebiliyoruz. Ben ünit test yazarken her metot içerisinde ismi unique olarak atıyorum.
+**DbContextOptionsBuilder** üzerinden kullandığımız **UseInMemoryDatabase** metodu parametre olarak kendi belirlediğimiz bir isimi almakta. Eğer program kapanana kadar tek bir veritabanı üzerinden gitmek istiyorsanız aynı ismi verebilirsiniz ya da test senaryolarınızı buna göre yazabilirsiniz. 
