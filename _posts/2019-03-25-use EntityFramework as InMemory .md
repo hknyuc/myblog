@@ -13,6 +13,7 @@ Unit test yazanlar bilir, veritabanı üzerindeki işlemlerde unit test yazmak b
  Install-Package Microsoft.EntityFrameworkCore.InMemory
 ```
 
+
 yazarak paketi indirebilirsiniz. Şimdi sıra geldi Entity modellerimizi yazmaya,
 
 ```csharp
