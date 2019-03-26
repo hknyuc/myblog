@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "EntityFramework üzerinde InMemory çalışmak"
+title: "EntityFramework ile InMemory çalışmak"
 comments: true
 description: ""
 keywords: "Weakset Weakmap map set"
