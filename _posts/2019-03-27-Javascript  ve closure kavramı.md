@@ -51,6 +51,7 @@ console.log(myVariable);
 Gördüğünüz üzere **MyFunctionExample** içinde tanımlanmayan bir değişken, fonksiyon içerisinde kullanılmış. **myVariable**, **myFunctionExample** fonksiyonuna göre **Global Scope** içerisindedir diyebiliriz.
 
 # Js değişkenlerinin yaşam süresi (lifetime)
+
 Bir değişken tanımladığınızda doğal olarak bu değişkene **memory** üzerinden bir alan tahsil ediliyor. **Local Scope** içinde tanımladığınız değişkenler fonksiyon çalıştırılıktan sonra hafızadan otomatik olarak silinmektedir. Fakat **Global Scope** içindeki değişkenin silinmesi için bağlı bulunduğu fonksiyonun çalıştırmayı sonlandırması gerekiyor. Bu yüzden değişken tanımlarken Local mı, Global olması gerektiğini dikkat etmek gerekiyor. Global tanımlayacağınız değişkenleri de hafıza üzerinden sızıntılar oluşmaması için dikkat edilmesi gerek bazı teknikler mevcut, [Weak Referanslar]({% post_url 2019-03-12-Weak (Gevşek) Referanslar %}) yazımda bunlara değindim, okuyabilirsiniz. 
 
 # Let / Var / Const Kullanımı
@@ -94,13 +95,14 @@ Yazdığımız bütün örneklerde Scope'un başlangıç ve bitişini fonksiyonu
 
 ## Closure Kavramı
 
-Bir fonksiyonun **Closure** olması, o fonksiyonun kullandığı değişkenlerin dışarıdan erişilememesi anlamına gelmektedir. Kendi içerisinde kapalı (**Closure**) olması demektir. Örnek üzerinden gidersek daha anlaşılır olacağını düşünüyorum. 
+Bir fonksiyonun **Closure** olması, o fonksiyonun kullandığı değişkenlerin dışarıdan erişilememesi anlamına gelmektedir. Kendi içerisinde kapalı (**Closure**) olması demektir. Örnek üzerinden gidersek daha anlaşılır olacağını düşünüyorum.
 
 ```js
-const cars = ["BMW","Ford","Fiat"];
+var cars = ["BMW","Ford","Fiat"];
 function getMyCars(){
     return {
         show:function (){
+            console.log(cars.join(','));
             return cars.join(',');
         },
         remove:function (car){
@@ -110,11 +112,19 @@ function getMyCars(){
         }
     }
 }
-let myCars = getMyCars();
-myCars.show(); // returns BMW,Ford,Fiat
 
+let myCars = getMyCars();
+myCars.show();
+// output: BMW,Ford,Fiat
+myCars.remove('Fiat');
+myCars.show();
+// output: BMW,Ford
+cars = []; // is manipulated from another process
+myCars.show();
+// output:
 ```
 
+Yukarıdaki örnekte **getMyCars** adında bir fonksiyon tanımladık. Fonksiyon çalıştırıldığında bize **show** ve **remove** adında iki metodu olan bir obje dönüyor. Objemizin metotları kararlı bir şekilde çalışmıyor. Çünkü beslendiği verinin kaynağının referansı **global scope** da bulunmakta. Ve aynı scope içerisinde başka bir kod parçası bu değişkeni manipüle edebiliyor. Bu özelliklerden dolayı **getMyCars** fonksiyonu **Closure** özelliği taşımıyor diyebiliriz. Peki kodumuzu nasıl **Closure** yapabiliriz ?
 
 ```js
   function getMyCars(){
@@ -122,9 +132,10 @@ myCars.show(); // returns BMW,Ford,Fiat
           const cars = ["BMW","Ford","Fiat"];
           return {
              show:function (){
+                 console.log(cars.join(','));
                  return cars.join(',');
              },
-             delete:function (car){
+             remove:function (car){
                  let indexOfItem = cars.indexOf(car);
                  if(indexOfItem === -1) throw new Error(car + ' could not found');
                  cars.splice(indexOfItem,1);
@@ -136,12 +147,8 @@ myCars.show(); // returns BMW,Ford,Fiat
   let myCars = getMyCars();
   myCars.show();
   //output : "BMW,Ford,Fiat"
-  myCars.delete('Fiat');
+  myCars.remove('Fiat');
   myCars.show();
   //output : "BMW,Ford";
 ```
-
-
-
-
-
+Yazdığımız fonksiyonda **cars** değişkeni içerideki bir fonksiyon içerisinde tanımlandığı için gerçek anlamada **private** bir değişken tanımlamış olduk,  ve bu değişkenimizi dışarıdan erişime kapattık. 
