@@ -2,7 +2,7 @@
 layout: post
 title: "Weak (Gevşek) Referanslar"
 comments: true
-description: ""
+description: "Javascript'de bellek sızıntılarını önleyin."
 keywords: "Weakset Weakmap map set"
 ---
 

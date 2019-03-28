@@ -2,7 +2,7 @@
 layout: post
 title: "Entity Framework ile in memory çalışmak"
 comments: true
-description: ""
+description: "Entity Framework ile in memory çalışarak hızlıca unit testlerinizi yazın."
 keywords: "EntityFramework memory inmemory .net .netcore EF"
 ---
 Unit test yazanlar bilir, veritabanı üzerindeki işlemlerde unit test yazmak baya zahmetlidir. Ya bir test veritabanı ayarlamak gerekir, ya da işlemleri hafızadan (memory)'den yapabilmek için Entity'lerin bulunduğu fake DbSet yapıları kurmak gerekiyor. **.Net Core** ile birlikte geliştiricileri bu zahmetten kurtarmak için **Entity Framework (EF)'e** in memory desteği geldi. 
