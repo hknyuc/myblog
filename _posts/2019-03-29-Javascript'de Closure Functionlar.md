@@ -70,7 +70,7 @@ Yazdığımız bütün örneklerde Scope'un başlangıç ve bitişini fonksiyonu
  }
 
  myFunction();
-//output: 2;
+//output: 2
 ```
 
  **JavaScript Block Scope** ile birlikte scope'un sınırlarını **{}** blockları belirlemiş oldu. **var** ile tanımladığımız değişkene dışarıdan erişebildik.
