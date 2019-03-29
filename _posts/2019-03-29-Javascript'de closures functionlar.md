@@ -2,15 +2,15 @@
 layout: post
 title: "Javascript'de Closures Functionlar"
 comments: true
-description: "Javascript'de closure kavramı; bakımı kolay, temiz fonksiyonlar"
-keywords: "Js Javascript Closure Function Clean-Code"
+description: "Javascript'de closures kavramı; bakımı kolay, temiz fonksiyonlar"
+keywords: "Js Javascript Closures Function Clean-Code"
 ---
 
-**Closure**, JS geliştiricileri tarafından kafa karışıklığına neden olan kavramlarından başında geliyor. Tabiki bu kavram sadece JS'e ait değil. Çoğu dilde mevcut. Bu yazımda JS'de closure (kapatılmış) fonksiyon geliştirme tekniği üzerine olacak.
+**Closures**, JS geliştiricileri tarafından kafa karışıklığına neden olan kavramlarından başında geliyor. Tabiki bu kavram sadece JS'e ait değil. Çoğu dilde mevcut. Bu yazımda JS'de closures (kapatılmış) fonksiyon geliştirme tekniği üzerine olacak.
 
 # Scope Nedir
 
-**Closure** kavramını açıklamadan önce **Scope** kavramına değinmemiz gerekiyor. Scope kendi içinde ikiye ayrılmaktadır;
+**Closures** kavramını açıklamadan önce **Scope** kavramına değinmemiz gerekiyor. Scope kendi içinde ikiye ayrılmaktadır;
 
 1. Local Scope
 2. Global Scope
@@ -119,9 +119,9 @@ Görüldüğü üzere **let** ile **Local Scope** içinde yaptığımız değiş
 
 **const** olarak tanımlamış olduğum **myVariable** değişkenine yeni bir değer atamak istediğimde hata aldım. Tanımladığınız değişkenin değerinin sonradan değişmesini istemiyorsanız kullanabilirsiniz.
 
-## Closure Kavramı
+## Closures Kavramı
 
-Bir fonksiyonun **Closure** olması, o fonksiyonun kullandığı değişkenlerin dışarıdan erişilememesi anlamına gelmektedir. Kendi içerisinde kapalı (**Closure**) olması demektir. Örnek üzerinden gidersek daha anlaşılır olacağını düşünüyorum.
+Bir fonksiyonun **Closures** olması, o fonksiyonun kullandığı değişkenlerin dışarıdan erişilememesi anlamına gelmektedir. Kendi içerisinde kapalı (**Closures**) olması demektir. Örnek üzerinden gidersek daha anlaşılır olacağını düşünüyorum.
 
 ```js
 var cars = ["BMW","Ford","Fiat"];
@@ -150,7 +150,7 @@ myCars.show();
 // output:
 ```
 
-Yukarıdaki örnekte **getMyCars** adında bir fonksiyon tanımladık. Fonksiyon çalıştırıldığında bize **show** ve **remove** adında iki metodu olan bir obje dönüyor. Objemizin metotları kararlı bir şekilde çalışmıyor. Çünkü beslendiği verinin kaynağının referansı **global scope** da bulunmakta. Ve aynı scope içerisinde başka bir kod parçası bu değişkeni manipüle edebiliyor. Bu özelliklerden dolayı **getMyCars** fonksiyonu **Closure** özelliği taşımıyor diyebiliriz. Peki kodumuzu nasıl **Closure** yapabiliriz ?
+Yukarıdaki örnekte **getMyCars** adında bir fonksiyon tanımladık. Fonksiyon çalıştırıldığında bize **show** ve **remove** adında iki metodu olan bir obje dönüyor. Objemizin metotları kararlı bir şekilde çalışmıyor. Çünkü beslendiği verinin kaynağının referansı **global scope** da bulunmakta. Ve aynı scope içerisinde başka bir kod parçası bu değişkeni manipüle edebiliyor. Bu özelliklerden dolayı **getMyCars** fonksiyonu **Closures** özelliği taşımıyor diyebiliriz. Peki kodumuzu nasıl **Closures** yapabiliriz ?
 
 ```js
   function getMyCars(){
@@ -178,9 +178,9 @@ Yukarıdaki örnekte **getMyCars** adında bir fonksiyon tanımladık. Fonksiyon
   //output : "BMW,Ford";
 ```
 
-Yazdığımız fonksiyonda **cars** değişkeni içerideki bir fonksiyon içerisinde tanımlandığı için gerçek anlamada **private** bir değişken tanımlamış olduk, ve bu değişkenimizi dışarıdan erişime kapattık. **Closure** kullanımı sayesinde **Object-Oriented Programming** yönelime ait **data-hiding**, **encapsulation** gibi kavramları sağlamış oluyoruz.
+Yazdığımız fonksiyonda **cars** değişkeni içerideki bir fonksiyon içerisinde tanımlandığı için gerçek anlamada **private** bir değişken tanımlamış olduk, ve bu değişkenimizi dışarıdan erişime kapattık. **Closures** kullanımı sayesinde **Object-Oriented Programming** yönelime ait **data-hiding**, **encapsulation** gibi kavramları sağlamış oluyoruz.
 
-## Döngü içinde Closure yapılar oluşturmak
+## Döngü içinde Closures yapılar oluşturmak
 
 ```js
 function runExample(){
@@ -213,7 +213,7 @@ runExample();
 //output: 3
 ```
 
-Şimdi oldu, yazdığımız fonksiyonu başka bir fonksiyon içerisine alıp en üstteki fonksiyona değerimizi parametre olarak gönderdik. Peki bu nasıl çalıştı? **index** olarak belirlediğimiz **i** değişkeni değer tipli bir değişkendir, değer tipli değişkenler fonksiyonlara parametre olarak gönderildiğiklerinde içindeki değerler kopyalanarak yeni bir değişken olarak tanımlanır. Bu da fonksiyonumuzun **closure** olduğu anlamına gelmektedir. Bu problemi **i** değişkenimizi **let** ile tanımlayarak da çözebiliriz.
+Şimdi oldu, yazdığımız fonksiyonu başka bir fonksiyon içerisine alıp en üstteki fonksiyona değerimizi parametre olarak gönderdik. Peki bu nasıl çalıştı? **index** olarak belirlediğimiz **i** değişkeni değer tipli bir değişkendir, değer tipli değişkenler fonksiyonlara parametre olarak gönderildiğiklerinde içindeki değerler kopyalanarak yeni bir değişken olarak tanımlanır. Bu da fonksiyonumuzun **closures** olduğu anlamına gelmektedir. Bu problemi **i** değişkenimizi **let** ile tanımlayarak da çözebiliriz.
 
 ```js
 function runExample(){
@@ -234,7 +234,7 @@ runExample();
 
 For iterasyonu içerisinde **let** tanımlaması ile tek bir değişken yerine, her döngüde yeni bir değişken  tanımlamaktadır.
 
-## Closure Neden Önemli?
+## Closures Neden Önemli?
 
 **Functional Programming** paradigmaları popülerliği her geçen gün artırmakta. JS tam anlamıyla bir functional bir dil olmasada çoğu özelliğini içerisinde barındırıyor. İç içe girmiş, aynı scope'u paylaşan, çalıştırılıklarında da fonksiyon döndüren fonksiyonların bakımı, okunabilirliği zorlaşıyor.  **Closures** daha okunabilir, test edilebilir, yeniden kullanılabilir, hafızada sızıntı oluşturmayan kod yazmanızı sağlamaktadır.
 
