@@ -208,8 +208,8 @@ function runExample(){
 }
 runExample();
 //output: 0
-//output: 1,
-//output: 2,
+//output: 1
+//output: 2
 //output: 3
 ```
 
@@ -238,7 +238,8 @@ For iterasyonu içerisinde **let** tanımlaması ile tek bir değişken yerine, 
 
 **Functional Programming** paradigmaları popülerliği her geçen gün artırmakta. JS tam anlamıyla bir functional bir dil olmasada çoğu özelliğini içerisinde barındırıyor. İç içe girmiş, aynı scope'u paylaşan, çalıştırılıklarında da fonksiyon döndüren fonksiyonların bakımı, okunabilirliği zorlaşıyor.  **Closures** daha okunabilir, test edilebilir, yeniden kullanılabilir, hafızada sızıntı oluşturmayan kod yazmanızı sağlamaktadır.
 
---
+---
+
 Bu yazımda aşağıdaki sayfalardan da yararlandım;
 
 1. [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
