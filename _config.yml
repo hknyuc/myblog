@@ -5,7 +5,7 @@ description   : "Yazılım teknikleri ve teknolojileri üzerine analiz ve çalı
 keywords      : "c#, javascript, mongodb, pattern, aop, oop"
 url           :  "https://yucel.dev"
 app           :  "https://yucel.dev"
-baseurl       : "https://yucel.dev" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
+baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-136368539-1
