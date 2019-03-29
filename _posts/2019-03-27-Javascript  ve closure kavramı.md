@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Javascript ve closure kavramı"
+title: "Javascript'de Closure Functionlar"
 comments: true
-description: ""
-keywords: ""
+description: "Javascript'de closure kavramı; bakımı kolay, temiz fonksiyonlar"
+keywords: "Js Javascript Closure Function Clean-Code"
 ---
 
 
-**Closure**, JS geliştiricileri tarafından kafa karışıklığını neden olan kavramlarından başında geliyor. Tabiki bu kavram sadece JS'e ait bir kavram değil. Çoğu dilde bu kavram mevcut. Bu yazımda JS'de closure yazılım geliştirme tekniği üzerine olacak. Basit ve açıklayıcı yazmaya özen göstereceğim. 
+**Closure**, JS geliştiricileri tarafından kafa karışıklığını neden olan kavramlarından başında geliyor. Tabiki bu kavram sadece JS'e ait değil. Çoğu dilde mevcut. Bu yazımda JS'de closure (kapatılmış) fonksiyon geliştirme tekniği üzerine olacak.
 
 # Scope Nedir
 
@@ -17,6 +17,7 @@ keywords: ""
 2. Global Scope
 
 ## Local Scope
+
 Eğer bir değişkenimiz bir fonksiyon içerisinde tanımlıyorsanız buna **Local Scope** denir.
 
 ```js
@@ -48,15 +49,16 @@ muFunctionExample();
 console.log(myVariable);
 //output : car
 ```
+
 Gördüğünüz üzere **MyFunctionExample** içinde tanımlanmayan bir değişken, fonksiyon içerisinde kullanılmış. **myVariable**, **myFunctionExample** fonksiyonuna göre **Global Scope** içerisindedir diyebiliriz.
 
 # Js değişkenlerinin yaşam süresi (lifetime)
 
-Bir değişken tanımladığınızda doğal olarak bu değişkene **memory** üzerinden bir alan tahsil ediliyor. **Local Scope** içinde tanımladığınız değişkenler fonksiyon çalıştırılıktan sonra hafızadan otomatik olarak silinmektedir. Fakat **Global Scope** içindeki değişkenin silinmesi için bağlı bulunduğu fonksiyonun çalıştırmayı sonlandırması gerekiyor. Bu yüzden değişken tanımlarken Local mı, Global olması gerektiğini dikkat etmek gerekiyor. Global tanımlayacağınız değişkenleri de hafıza üzerinden sızıntılar oluşmaması için dikkat edilmesi gerek bazı teknikler mevcut, [Weak Referanslar]({% post_url 2019-03-12-Weak (Gevşek) Referanslar %}) yazımda bunlara değindim, okuyabilirsiniz. 
+Bir değişken tanımladığınızda doğal olarak bu değişkene **memory** üzerinden bir alan tahsil ediliyor. **Local Scope** içinde tanımladığınız değişkenler fonksiyon çalıştırılıktan sonra hafızadan otomatik olarak silinmektedir. Fakat **Global Scope** içindeki değişkenin silinmesi için bağlı bulunduğu fonksiyonun çalıştırmayı sonlandırması gerekiyor. Bu yüzden değişken tanımlarken Local mı, Global olması gerektiğini dikkat etmek gerekiyor. Global tanımlayacağınız değişkenleri de hafıza üzerinden sızıntılar oluşmaması için dikkat edilmesi gereken bazı teknikler mevcut, [Weak Referanslar]({% post_url 2019-03-12-Weak (Gevşek) Referanslar %}) yazımda bunlara değindim, okuyabilirsiniz.
 
 # Let / Var / Const Kullanımı
 
-**ECMAScript 2015** ile beraber **let**,**const** ile de değişken tanımlama özelliği eklendi .Dikkat ettiyseniz yukarıda kullandığımız bütün örneklerde **var** kullanarak değişken tanımladık. Bu iki kavram **Local Scope** içerisinde daha kontrol edilebilir, temiz kod yazmamıza yarıyor.
+**ECMAScript 2015** ile beraber **let**,**const** ile de değişken tanımlama özelliği eklendi. Dikkat ettiyseniz yukarıda kullandığımız bütün örneklerde **var** kullanarak değişken tanımladık. Bu iki kavram **Local Scope** içerisinde daha kontrol edilebilir, temiz kod yazmamıza yarıyor.
 
 Yazdığımız bütün örneklerde Scope'un başlangıç ve bitişini fonksiyonun sınırıları belirliyordu. Fakat **ECMAScript 2015** ile birlikte **JavaScript Block Scope** dediğimiz kavram geldi. Örnek vermek gerekirse;
 
@@ -71,6 +73,7 @@ Yazdığımız bütün örneklerde Scope'un başlangıç ve bitişini fonksiyonu
  myFunction();
 //output: 2;
 ```
+
  **JavaScript Block Scope** ile birlikte scope'un sınırlarını **{}** blockları belirlemiş oldu. **var** ile tanımladığımız değişkene dışarıdan erişebildik.
 
  ```js
@@ -84,6 +87,7 @@ Yazdığımız bütün örneklerde Scope'un başlangıç ve bitişini fonksiyonu
  myFunction();
  //output: ReferenceError: x is not defined
  ```
+
 **let** ile tanımladığımız değişkenimize **{}** dışından erişmeye çalıştığımızda hata alıyoruz. Sadece **Local Scope** içerisinde erişme açık olmuş oluyor.
 
 ```js
@@ -104,18 +108,17 @@ myFunction();
 //output: y:5
 ```
 
+Görüldüğü üzere **let** ile **Local Scope** içinde yaptığımız değişiklikler sadece o Scope içinde kalmaktadır.  
 
-
-
- **const** kullanım biçimi olarak **let** ile aynı fakat, **const** ile tanımlanmış bir değişkenin referansını sonradan değiştiremiyoruz.
+**const** kullanım biçimi olarak **let** ile aynı fakat, **const** ile tanımlanmış bir değişkenin referansını sonradan değiştiremiyoruz.
 
 ```js
   const myVariable = "this variable is constant";
   myVariable = "";
   //output : TypeError: Assignment to constant variable
 ```
-**const** olarak tanımlamış olduğum **myVariable** değişkenine yeni bir değer atamak istediğimde hata aldım. Tanımladığınız değişkenin değerinin sonradan değişmesini istemiyorsanız kullanabilirsiniz.
 
+**const** olarak tanımlamış olduğum **myVariable** değişkenine yeni bir değer atamak istediğimde hata aldım. Tanımladığınız değişkenin değerinin sonradan değişmesini istemiyorsanız kullanabilirsiniz.
 
 ## Closure Kavramı
 
@@ -175,9 +178,10 @@ Yukarıdaki örnekte **getMyCars** adında bir fonksiyon tanımladık. Fonksiyon
   myCars.show();
   //output : "BMW,Ford";
 ```
+
 Yazdığımız fonksiyonda **cars** değişkeni içerideki bir fonksiyon içerisinde tanımlandığı için gerçek anlamada **private** bir değişken tanımlamış olduk, ve bu değişkenimizi dışarıdan erişime kapattık. **Closure** kullanımı sayesinde **Object-Oriented Programming** yönelime ait **data-hiding**, **encapsulation** gibi kavramları sağlamış oluyoruz.
 
-## Döngü içinde Closure oluşturmak
+## Döngü içinde Closure yapılar oluşturmak
 
 ```js
 function runExample(){
@@ -190,6 +194,7 @@ function runExample(){
 runExample();
 //output : 4,4,4,4
 ```
+
 **runExample** fonksiyonunu içerisinde bir döngü tanımladık, döngüde iterator index olarak tanımladığımız **i** değişkenini **asenkron** olarak bu değişkeni ekrana yazdırdık. Beklediğimiz değer **1,2,3,4** olması gerekiyorken sonuç **4,4,4,4** oldu. Bunun nedeni **setTimeout** fonkisyonuna parametre olarak gönderdiğimiz fonksiyonun **i** değişkeninin referansını scopuna almasıdır. İteratorun değer ataması **1000 ms** yani **1 saniyeden** daha az bir sürede olduğu için, **i** değişkenine atılan son değer 4 oldu. Tanımlamış olduğumuz bütün fonksiyonlar 4 değerini ekrana yazmış oldular. Peki bu problemi nasıl çözebiliriz?
 
 ```js
@@ -208,7 +213,8 @@ runExample();
 //output: 2,
 //output: 3
 ```
-Şimdi oldu, yazdığımız fonksiyonu başka bir fonksiyon içerisine alıp en üstteki fonksiyona değerimizi parametre olarak gönderdik. Peki bu nasıl çalıştı? **index** olarak belirlediğimiz **i** değişkeni değer tipli bir değişkendir, değer tipli değişkenler fonksiyonlara parametre olarak gönderildiğiklerinde içindeki değerler kopyalanarak yeni bir değişken olarak tanımlanır. Bu da fonksiyonumuzun **closure** olduğu anlamına gelmektedir. Bu problemi **i** değişkenimizi **let** ile tanımlayarakta çözebiliriz.
+
+Şimdi oldu, yazdığımız fonksiyonu başka bir fonksiyon içerisine alıp en üstteki fonksiyona değerimizi parametre olarak gönderdik. Peki bu nasıl çalıştı? **index** olarak belirlediğimiz **i** değişkeni değer tipli bir değişkendir, değer tipli değişkenler fonksiyonlara parametre olarak gönderildiğiklerinde içindeki değerler kopyalanarak yeni bir değişken olarak tanımlanır. Bu da fonksiyonumuzun **closure** olduğu anlamına gelmektedir. Bu problemi **i** değişkenimizi **let** ile tanımlayarak da çözebiliriz.
 
 ```js
 function runExample(){
@@ -220,6 +226,25 @@ function runExample(){
 }
 
 runExample();
+//output: 0
+//output: 1
+//output: 2
+//output: 3
+
 ```
 
+For iterasyonu içerisinde **let** tanımlaması ile tek bir değişken yerine, her döngüde yeni bir değişken  tanımlamaktadır.
+
+## Closure Neden Önemli?
+
+**Functional Programming** paradigmaları popülerliği her geçen gün artırmakta. JS tam anlamıyla bir functional bir dil olmasada çoğu özelliğini içerisinde barındırıyor. İç içe girmiş, aynı scope'u paylaşan, çalıştırılıklarında da fonksiyon döndüren fonksiyonların bakımı, okunabilirliği zorlaşıyor.  **Closures** daha okunabilir, test edilebilir, yeniden kullanılabilir, hafızada sızıntı oluşturmayan kod yazmanızı sağlamaktadır.
+
+--
+Bu yazımda aşağıdaki sayfalardan da yararlandım;
+
+1. (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures]
+
+2. (https://www.w3schools.com/js/js_function_closures.asp)[https://www.w3schools.com/js/js_function_closures.asp]
+
+3. (https://www.quora.com/Why-are-closures-important-in-JavaScript)[https://www.quora.com/Why-are-closures-important-in-JavaScript]
 
