@@ -6,7 +6,6 @@ description: "Javascript'de closure kavramı; bakımı kolay, temiz fonksiyonlar
 keywords: "Js Javascript Closure Function Clean-Code"
 ---
 
-
 **Closure**, JS geliştiricileri tarafından kafa karışıklığını neden olan kavramlarından başında geliyor. Tabiki bu kavram sadece JS'e ait değil. Çoğu dilde mevcut. Bu yazımda JS'de closure (kapatılmış) fonksiyon geliştirme tekniği üzerine olacak.
 
 # Scope Nedir
@@ -45,7 +44,7 @@ function myFunctionExample(){
 }
 
 muFunctionExample();
-//output : car 
+//output : car
 console.log(myVariable);
 //output : car
 ```
@@ -242,9 +241,8 @@ For iterasyonu içerisinde **let** tanımlaması ile tek bir değişken yerine, 
 --
 Bu yazımda aşağıdaki sayfalardan da yararlandım;
 
-1. (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures]
+1. [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
-2. (https://www.w3schools.com/js/js_function_closures.asp)[https://www.w3schools.com/js/js_function_closures.asp]
+2. [https://www.w3schools.com/js/js_function_closures.asp](https://www.w3schools.com/js/js_function_closures.asp)
 
-3. (https://www.quora.com/Why-are-closures-important-in-JavaScript)[https://www.quora.com/Why-are-closures-important-in-JavaScript]
-
+3. [https://www.quora.com/Why-are-closures-important-in-JavaScript](https://www.quora.com/Why-are-closures-important-in-JavaScript)
