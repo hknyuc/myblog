@@ -63,7 +63,7 @@ Yazdığımız bütün örneklerde Scope'un başlangıç ve bitişini fonksiyonu
 ```js
  function myFunction(){
      {
-         var x = 2;
+        var x = 2;
      }
      console.log(x);
  }
@@ -75,6 +75,7 @@ Yazdığımız bütün örneklerde Scope'un başlangıç ve bitişini fonksiyonu
 
  ```js
  function myFunction(){
+
      {
          let x = 2;
      }
@@ -83,7 +84,30 @@ Yazdığımız bütün örneklerde Scope'un başlangıç ve bitişini fonksiyonu
  myFunction();
  //output: ReferenceError: x is not defined
  ```
-**let** ile tanımladığımız değişkenimize **{}** dışından erişmeye çalıştığımızda hata alıyoruz. Sadece **Local Scope** içerisinde erişme açık olmuş oluyor. **const** kullanım biçimi olarak **let** ile aynı fakat, **const** ile tanımlanmış bir değişkenin referansını sonradan değiştiremiyoruz.
+**let** ile tanımladığımız değişkenimize **{}** dışından erişmeye çalıştığımızda hata alıyoruz. Sadece **Local Scope** içerisinde erişme açık olmuş oluyor.
+
+```js
+function myFunction (){
+    var x=5;
+    let y=5;
+    {
+        var x = 10;
+        let y = 10;
+    }
+    console.log("x:"+x);
+    console.log("y:"+y);
+}
+
+myFunction();
+
+//output: x:10
+//output: y:5
+```
+
+
+
+
+ **const** kullanım biçimi olarak **let** ile aynı fakat, **const** ile tanımlanmış bir değişkenin referansını sonradan değiştiremiyoruz.
 
 ```js
   const myVariable = "this variable is constant";
@@ -151,4 +175,51 @@ Yukarıdaki örnekte **getMyCars** adında bir fonksiyon tanımladık. Fonksiyon
   myCars.show();
   //output : "BMW,Ford";
 ```
-Yazdığımız fonksiyonda **cars** değişkeni içerideki bir fonksiyon içerisinde tanımlandığı için gerçek anlamada **private** bir değişken tanımlamış olduk,  ve bu değişkenimizi dışarıdan erişime kapattık. 
+Yazdığımız fonksiyonda **cars** değişkeni içerideki bir fonksiyon içerisinde tanımlandığı için gerçek anlamada **private** bir değişken tanımlamış olduk, ve bu değişkenimizi dışarıdan erişime kapattık. **Closure** kullanımı sayesinde **Object-Oriented Programming** yönelime ait **data-hiding**, **encapsulation** gibi kavramları sağlamış oluyoruz.
+
+## Döngü içinde Closure oluşturmak
+
+```js
+function runExample(){
+    for(var i=0;i<4;i++){
+        setTimeout(()=>{
+            console.log(i);
+        },i*1000);
+    }
+}
+runExample();
+//output : 4,4,4,4
+```
+**runExample** fonksiyonunu içerisinde bir döngü tanımladık, döngüde iterator index olarak tanımladığımız **i** değişkenini **asenkron** olarak bu değişkeni ekrana yazdırdık. Beklediğimiz değer **1,2,3,4** olması gerekiyorken sonuç **4,4,4,4** oldu. Bunun nedeni **setTimeout** fonkisyonuna parametre olarak gönderdiğimiz fonksiyonun **i** değişkeninin referansını scopuna almasıdır. İteratorun değer ataması **1000 ms** yani **1 saniyeden** daha az bir sürede olduğu için, **i** değişkenine atılan son değer 4 oldu. Tanımlamış olduğumuz bütün fonksiyonlar 4 değerini ekrana yazmış oldular. Peki bu problemi nasıl çözebiliriz?
+
+```js
+function runExample(){
+    for(var i=0;i<4;i++){
+        (function (a) {
+            setTimeout(()=>{
+            console.log(a);
+            },a*1000);
+       })(i);
+    }
+}
+runExample();
+//output: 0
+//output: 1,
+//output: 2,
+//output: 3
+```
+Şimdi oldu, yazdığımız fonksiyonu başka bir fonksiyon içerisine alıp en üstteki fonksiyona değerimizi parametre olarak gönderdik. Peki bu nasıl çalıştı? **index** olarak belirlediğimiz **i** değişkeni değer tipli bir değişkendir, değer tipli değişkenler fonksiyonlara parametre olarak gönderildiğiklerinde içindeki değerler kopyalanarak yeni bir değişken olarak tanımlanır. Bu da fonksiyonumuzun **closure** olduğu anlamına gelmektedir. Bu problemi **i** değişkenimizi **let** ile tanımlayarakta çözebiliriz.
+
+```js
+function runExample(){
+    for(let i=0;i<4;i++){
+        setTimeout(()=>{
+            console.log(i);
+        },i*1000);
+    }
+}
+
+runExample();
+```
+
+
