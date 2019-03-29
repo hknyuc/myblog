@@ -51,7 +51,7 @@ console.log(myVariable);
 
 Gördüğünüz üzere **MyFunctionExample** içinde tanımlanmayan bir değişken, fonksiyon içerisinde kullanılmış. **myVariable**, **myFunctionExample** fonksiyonuna göre **Global Scope** içerisindedir diyebiliriz.
 
-# Js değişkenlerinin yaşam süresi (lifetime)
+# JS değişkenlerinin yaşam süresi (lifetime)
 
 Bir değişken tanımladığınızda doğal olarak bu değişkene **memory** üzerinden bir alan tahsil ediliyor. **Local Scope** içinde tanımladığınız değişkenler fonksiyon çalıştırılıktan sonra hafızadan otomatik olarak silinmektedir. Fakat **Global Scope** içindeki değişkenin silinmesi için bağlı bulunduğu fonksiyonun çalıştırmayı sonlandırması gerekiyor. Bu yüzden değişken tanımlarken Local mı, Global olması gerektiğini dikkat etmek gerekiyor. Global tanımlayacağınız değişkenleri de hafıza üzerinden sızıntılar oluşmaması için dikkat edilmesi gereken bazı teknikler mevcut, [Weak Referanslar]({% post_url 2019-03-12-Weak (Gevşek) Referanslar %}) yazımda bunlara değindim, okuyabilirsiniz.
 
