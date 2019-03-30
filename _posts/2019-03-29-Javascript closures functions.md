@@ -77,7 +77,6 @@ Yazdığımız bütün örneklerde Scope'un başlangıç ve bitişini fonksiyonu
 
  ```js
  function myFunction(){
-
      {
          let x = 2;
      }
