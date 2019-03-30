@@ -6,7 +6,7 @@ keywords      : "c#, javascript, mongodb, pattern, aop, oop"
 url           :  ""
 app           :  "https://yucel.dev"
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
-cover         : "" # image uri like logo/cover image for site seo
+cover         : "/assets/images/hakan-yucel.jpg" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-136368539-1
 twitter_username  : "hknyuc"
