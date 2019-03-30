@@ -6,7 +6,7 @@ description: "Javascript closures kavramı; bakımı kolay, temiz fonksiyonlar"
 keywords: "Js Javascript Closures Function Clean-Code"
 ---
 
-**Closures**, JS geliştiricileri tarafından kafa karışıklığına neden olan kavramların başında geliyor. Tabiki bu kavram sadece JS'e ait değil. Çoğu dilde mevcut. Bu yazım JS'de closures (kapatılmış) fonksiyon geliştirme tekniği üzerine olacak.
+**Closures**, JS geliştiricileri tarafından kafa karışıklığına neden olan kavramların başında geliyor. Tabii ki bu kavram sadece JS'e ait değil. Çoğu dilde mevcut. Bu yazım JS'de closures (kapatılmış) fonksiyon geliştirme tekniği üzerine olacak.
 
 # Scope Nedir
 
