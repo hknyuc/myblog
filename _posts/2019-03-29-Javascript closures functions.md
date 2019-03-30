@@ -239,7 +239,7 @@ For iterasyonu içerisinde **let** tanımlaması ile tek bir değişken yerine, 
 **Functional Programming** paradigmaları popülerliği her geçen gün artırmakta. JS tam anlamıyla bir functional bir dil olmasa da çoğu özelliğini içerisinde barındırıyor. İç içe girmiş, aynı scope'u paylaşan, çalıştırıldıklarında da fonksiyon döndüren fonksiyonların bakımı, okunabilirliği zorlaşıyor.  **Closures** daha okunabilir, test edilebilir, yeniden kullanılabilir, hafızada sızıntı oluşturmayan kod yazmamızı sağlamaktadır.
 
 ---
-*Bu konu ile ilgili eleştirilerinizi, görüşlerinizi ve sormak istediğiniz sorularınızı bana iletebilirsiniz.*
+*Bu konu ile ilgili eleştirilerinizi, görüşlerinizi ve sorularınızı bana iletebilirsiniz.*
 
 Bu yazımda aşağıdaki sayfalardan da yararlandım;
 
