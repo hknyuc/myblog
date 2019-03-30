@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Javascript Closures Function"
+title: "Javascript Closures Functions"
 comments: true
 description: "Javascript closures kavramı; bakımı kolay, temiz fonksiyonlar"
 keywords: "Js Javascript Closures Function Clean-Code"
